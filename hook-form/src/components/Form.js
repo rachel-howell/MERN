@@ -12,21 +12,21 @@ const Form = () => {
 
     const handleFirst = (e) => {
         e.preventDefault();
-        e.target.value.length < 2 ?
+        e.target.value.length < 2 && e.target.value ?
         setFirstError("First Name must be at least 2 characters.") :
         setFirstError("");
     }
 
     const handleLast = (e) => {
         e.preventDefault();
-        e.target.value.length < 2 ?
+        e.target.value.length < 2 && e.target.value ?
         setLastError("Last Name must be at least 2 characters.") :
         setLastError("");
     }
 
     const handleEmail = (e) => {
         e.preventDefault();
-        e.target.value.length < 5 ?
+        e.target.value.length < 5 && e.target.value ?
         setEmailError("Email must be at least 5 characters.") :
         setEmailError("");
     }
@@ -34,14 +34,14 @@ const Form = () => {
     const handlePassword = (e) => {
         e.preventDefault();
         setPassword(e.target.value);
-        e.target.value.length < 8 ?
+        e.target.value.length < 8 && e.target.value ?
         setPasswordError("Password must be at least 8 characters.") :
         setPasswordError("");
     }
 
     const handleConfirmPassword = (e) => {
         e.preventDefault();
-        e.target.value != password ?
+        e.target.value != password && e.target.value ?
         setConfirmPasswordError("Passwords must match.") :
         setConfirmPasswordError("");
     }

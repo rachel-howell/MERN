@@ -40,7 +40,3 @@
 .completed {
   text-decoration: line-through;
 }
-
-.notCompleted {
-  text-decoration: none;
-}

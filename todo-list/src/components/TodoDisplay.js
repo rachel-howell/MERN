@@ -2,13 +2,14 @@ import React from 'react';
 
 const TodoDisplay = ( {taskList, setTaskList}) => {
 
-  const taskStatusHandler = (status) => {
-    console.log("hi");
-    if (status==true) {
-      return "completed";
-    } else {
-      return "notCompleted";
-    }
+  const checkboxHandler = (id) => {
+    const updatedArr = taskList.map((task) => {
+      if(task.id === id) {
+        task.complete = !task.complete;
+      }
+      return task;
+    })
+    setTaskList(updatedArr);
   }
 
   const deleteTask = (id) => {
@@ -26,13 +27,8 @@ const TodoDisplay = ( {taskList, setTaskList}) => {
           {
             taskList.map((task)=>(
               <div className="d-flex justify-content-evenly align-items-baseline my-2">
-                <input type="checkbox" className="me-2" onClick={()=> 
-                  {
-                    task.complete = !task.complete;
-                    console.log(task.complete);
-                  }
-                  }  />
-                    <label className="col-4">{task.title}</label>
+                <input type="checkbox" className="me-2" onClick={ ()=>checkboxHandler(task.id) }  />
+                    <label className={"col-4"} style={{ textDecoration: task.complete ? "line-through" : null }}>{task.title}</label>
                 <button type="submit" className="btn btn-danger" onClick={()=>deleteTask(task.id)}>Delete</button>
               </div>
             ))

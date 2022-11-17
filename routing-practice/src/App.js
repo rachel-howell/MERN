@@ -14,6 +14,7 @@ function App() {
           <Link to="/home">Home</Link>
           |
           <Link to={ input }>Word or Number</Link>
+          |
         </p>
         <Routes>
           <Route path="/home" element={ <Home />} />

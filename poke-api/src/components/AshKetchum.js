@@ -22,12 +22,9 @@ const AshKetchum = () => {
     console.log("Gotta catch em all");
     axios.get('https://pokeapi.co/api/v2/pokemon?limit=1000')
     .then(response=>{
-      console.log(response);
       setPokemonList(response.data.results);
     });
   }, [])
-
-  console.log(pokemonList)
 
   return (
     <div>

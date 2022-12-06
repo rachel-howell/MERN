@@ -10,7 +10,6 @@ function App() {
 
   return (
     <div className="App">
-
         <BoxForm boxList={boxList} setBoxList={setBoxList}/>
         <BoxDisplay boxList={boxList}/>
     </div>

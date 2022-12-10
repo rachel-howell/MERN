@@ -19,6 +19,8 @@ const ProductForm = () => {
                 console.log(res.data);
             })
             .catch(err=>console.log(err))
+        e.target.reset();
+        window.location.reload();
     }
 
 
